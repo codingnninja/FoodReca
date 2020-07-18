@@ -8,7 +8,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      id: null,
+      id: 1,
       userId: 1,
       food: '',
       cost: '',
@@ -41,7 +41,7 @@ class App extends React.Component {
     event.preventDefault()
     if (!this.state.food) return;
     const foodItem = {
-      id: this.state.foodItems.length + 1,
+      id: this.state.id++,
       food: this.state.food,
       cost: this.state.cost,
       userId: this.state.userId,

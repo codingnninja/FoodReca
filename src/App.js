@@ -4,11 +4,11 @@ import AddFoodItem from './AddFoodItem';
 import './App.css';
 import EditFoodItem from './EditFoodItem';
 class App extends React.Component {
-
+  nextId = 1;
   constructor() {
     super();
     this.state = {
-      id: 1,
+      id: null,
       userId: 1,
       food: '',
       cost: '',
@@ -41,7 +41,7 @@ class App extends React.Component {
     event.preventDefault()
     if (!this.state.food) return;
     const foodItem = {
-      id: this.state.id++,
+      id: this.nextId++,
       food: this.state.food,
       cost: this.state.cost,
       userId: this.state.userId,
